@@ -1,13 +1,13 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+import firebase from 'firebase/compat/app';
+import "firebase/compat/firestore";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBtX0zbq8OWFoczz-D55IEQ-zQxcmjZ6BU",
-  authDomain: "invoice-app-yt.firebaseapp.com",
-  projectId: "invoice-app-yt",
-  storageBucket: "invoice-app-yt.appspot.com",
-  messagingSenderId: "638958069840",
-  appId: "1:638958069840:web:2a359ba0cf4b8c7b648955",
+    apiKey: "AIzaSyA-CXYCf2iR8xrBLdz6zIR13Ss84I6Ry6Q",
+    authDomain: "invoice-app-yt-d6752.firebaseapp.com",
+    projectId: "invoice-app-yt-d6752",
+    storageBucket: "invoice-app-yt-d6752.appspot.com",
+    messagingSenderId: "423311106303",
+    appId: "1:423311106303:web:e836b16bdb6f22195f6cca"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
