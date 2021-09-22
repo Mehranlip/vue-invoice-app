@@ -3,6 +3,7 @@
     <div v-if="!mobile" class="app flex flex-column">
       <Navigation />
       <div class="app-content flex flex-column">
+        <Modal v-if="modalActive" />
         <transition name="invoice">
           <InvoiceModal v-if="invoiceModal" />
         </transition>
@@ -19,9 +20,10 @@
 
 
 <script>
-import {mapState} from 'vuex'
+import {mapState , mapActions} from 'vuex'
 import Navigation from "./components/Navigation";
 import InvoiceModal from  "./components/InvoiceModal"
+import Modal from "./components/Modal";
  export default {
    data(){
      return{
@@ -29,14 +31,18 @@ import InvoiceModal from  "./components/InvoiceModal"
      }
    },
    created() {
+     this.GET_INVOICES();
      this.checkScreen();
      window.addEventListener("resize", this.checkScreen)
    },
    components :{
      Navigation,
-     InvoiceModal
+     InvoiceModal,
+     Modal
    },
    methods :{
+     ...mapActions(['GET_INVOICES']),
+
      checkScreen (){
        const  windowWidth = window.innerWidth;
        if (windowWidth <= 750){
@@ -48,7 +54,7 @@ import InvoiceModal from  "./components/InvoiceModal"
      }
    },
    computed:{
-  ...mapState(["invoiceModal"])
+  ...mapState(["invoiceModal", "modalActive"])
    },
  }
 </script>
