@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="invoicesLoaded" >
     <div v-if="!mobile" class="app flex flex-column">
       <Navigation />
       <div class="app-content flex flex-column">
@@ -38,7 +38,7 @@ import Modal from "./components/Modal";
    components :{
      Navigation,
      InvoiceModal,
-     Modal
+     Modal,
    },
    methods :{
      ...mapActions(['GET_INVOICES']),
@@ -54,7 +54,7 @@ import Modal from "./components/Modal";
      }
    },
    computed:{
-  ...mapState(["invoiceModal", "modalActive"])
+  ...mapState(["invoiceModal", "modalActive", "invoicesLoaded"])
    },
  }
 </script>
